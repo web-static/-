@@ -19,7 +19,8 @@
     <script>
         var UserIPv4;
         var UserIPv6;
-
+        var SourceURL = new URL(window.location.href).searchParams.get('cs');
+        alert(SourceURL);
         function setUserIPv6(r) {
             UserIPv6 = r["ip"];
             // alert(UserIPv6);
