@@ -35,7 +35,12 @@
             var status = "";
             status = sessionStorage.getItem("status");
             if (status == "ok") {
-                window.location.href = "index.html";
+                if(SourceURL!=null){
+                    window.location.href = SourceURL;
+                }
+                else{
+                window.location.href = "https://www.iisjy.cn";
+                }
             }
         }
 
