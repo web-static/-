@@ -20,9 +20,6 @@
         var UserIPv4;
         var UserIPv6;
         var SourceURL = new URL(window.location.href).searchParams.get('url');
-        if(SourceURL!=null){
-            alert(SourceURL);
-        }
         function setUserIPv6(r) {
             UserIPv6 = r["ip"];
             // alert(UserIPv6);
@@ -37,8 +34,7 @@
             if (status == "ok") {
                 if(SourceURL!=null){
                     window.location.href = SourceURL;
-                }
-                else{
+                }else{
                 window.location.href = "https://www.iisjy.cn";
                 }
             }
