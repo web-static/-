@@ -122,12 +122,18 @@
                 </td>
                 <td><input type="button" value="人脸识别" disabled="disabled" /></td>
             </tr>
-
         </table>
-
-
-
     </form>
-</body>
+    <!--=== footer ===-->
+    <section class="footer"></section>
 
+    <!-- ==== js after load ==== -->
+    <script>
+    var jq=jQuery.noConflict();
+    jq(function(){
+        //jq(".header").load("/utility/header.html");
+        jq(".footer").load("https://static.iisjy.cn/html/utility/footer.html");
+    });
+    </script>
+    </body>    
 </html>
