@@ -61,7 +61,7 @@ function checkUserName() {
     var url;
 
     url = "https://api.iisjy.cn/CheckUserExists?account=";
-    
+
     xmlhttp = new XMLHttpRequest();
     xmlhttp.open("GET", url + name, false);
     xmlhttp.send(null);
@@ -70,14 +70,11 @@ function checkUserName() {
     obj = JSON.parse(text);
     // alert(obj.user.length);
 
-    if (text!="404") {
+    if (text != "404") {
         flag = 1;
-    }
-
-    if (flag == 1) {
+        alert("ok, " + text);
         document.getElementsByName('pw')[0].disabled = "";
-    }
-    else {
+    } else {
         document.getElementsByName('pw')[0].disabled = "disabled";
     }
 }
