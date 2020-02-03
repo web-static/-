@@ -17,11 +17,11 @@ function login() {
     if (flag == 1) {
         sessionStorage.setItem("status", "ok");
         var SourceURL = new URL(window.location.href).searchParams.get('url');
-        if(SourceURL!=null){
+        if (SourceURL != null) {
             window.location.href = SourceURL;
         }
-        else{
-        	window.location.href = "index.html";
+        else {
+            window.location.href = "index.html";
         }
     }
     else {
@@ -60,21 +60,20 @@ function checkUserName() {
     var obj = null;
     var url;
 
-    url = "json/user.json";
-
+    url = "https://api.iisjy.cn/CheckUserExists?account=";
+    
     xmlhttp = new XMLHttpRequest();
-    xmlhttp.open("GET", url, false);
+    xmlhttp.open("GET", url + name, false);
     xmlhttp.send(null);
 
     text = xmlhttp.responseText;
     obj = JSON.parse(text);
     // alert(obj.user.length);
-    for (var i = 0; i < obj.user.length; i++) {
-        // alert(obj.user[i].name + "==" + name);
-        if (obj.user[i].name == name) {
-            flag = 1;
-        }
+
+    if (text!="404") {
+        flag = 1;
     }
+
     if (flag == 1) {
         document.getElementsByName('pw')[0].disabled = "";
     }
