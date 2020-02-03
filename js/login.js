@@ -67,7 +67,7 @@ function checkUserName() {
     xmlhttp.send(null);
 
     text = xmlhttp.responseText;
-    obj = JSON.parse(text);
+    // obj = JSON.parse(text);
     // alert(obj.user.length);
 
     if (text != "404") {
